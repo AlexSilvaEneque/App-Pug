@@ -9,8 +9,11 @@ app.set('view engine','pug')
 app.set('views','views')
 
 
+app.use(express.static(path.join(__dirname,"static")))
+
+
 app.use(userRoutes)
 
-app.listen(4000, () => {
-    console.log('https://localhost:4000')
+app.listen(3000, () => {
+    console.log('http://localhost:3000')
 })

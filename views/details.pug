@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{tittle}
+    body 
+        h1 Details User
+        each user in users
+            .content
+                p #{user.id}
+                p #{user.nombre}
+                p #{user.edad}
+                p #{user.genero}
+                p #{user.email}
+                p #{user.profesion}
+                p #{user.salario}
+                p #{user.nroTelef}
+
+    script(src="/js/userPug.js")
+            

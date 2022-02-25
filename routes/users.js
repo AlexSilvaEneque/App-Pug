@@ -15,4 +15,10 @@ router.get('/', async (req, res) => {
     return res.render("index",{users:users, tittle:'Users'})
 })
 
+router.get('/user/:id', async (req, res) => {
+    const id = req.params.id
+    let user = await userController.readById(id)    
+    return res.render('details',{users: user, tittle: 'Details User'})
+})
+
 module.exports = router
