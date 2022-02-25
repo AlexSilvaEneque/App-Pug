@@ -1,27 +1,30 @@
 .user {
-    background-color: rgb(53, 202, 202);    
+    background-color: rgb(238, 167, 145);
+    border-radius: 25px;
     padding: 5px 0 10px 8px;
     margin-bottom: 8px;
-    border-radius: 25px;
 }
 
 .user p {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.btn-delete {
-    border: none;
+.btn-new {
+    background-color: rgb(109, 88, 226);
     border-radius: 6px;
-    cursor: pointer;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 17px;
-    margin-right: 3px;
+    color: rgb(252, 244, 244);
+    display: inline-block;
+    margin-bottom: 5px;
     padding: 5px 12px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.btn-edit {
-    background-color: rgb(113, 165, 113);
+.btn-more {
+    background-color: rgb(117, 102, 102);
     border-radius: 6px;
+    color: aqua;
     padding: 5px 12px;
     text-decoration: none;
     font-size: 17px;

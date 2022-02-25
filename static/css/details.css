@@ -1,0 +1,24 @@
+.content {
+    background-color: rgb(207, 172, 240);
+    padding: 10px 12px;
+}
+
+.btn-delete {
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
+    margin-right: 3px;
+    padding: 5px 12px;
+}
+
+.btn-edit {
+    background-color: rgba(149, 235, 206, 0.637);
+    border-radius: 6px;
+    color: aqua;
+    padding: 5px 12px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

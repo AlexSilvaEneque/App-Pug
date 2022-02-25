@@ -5,18 +5,22 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title #{tittle}
+        link(href="/css/details.css", rel="stylesheet")
     body 
         h1 Details User
+        a(href="/") Regresar
         each user in users
             .content
-                p #{user.id}
-                p #{user.nombre}
-                p #{user.edad}
-                p #{user.genero}
-                p #{user.email}
-                p #{user.profesion}
-                p #{user.salario}
-                p #{user.nroTelef}
+                p Id Usuario: #{user.id}
+                p Nombre: #{user.nombre}
+                p Edad: #{user.edad}
+                p Género: #{user.genero}
+                p Email: #{user.email}
+                p Profesion: #{user.profesion}
+                p Salario: #{user.salario}
+                p Teléfono: #{user.nroTelef}
+                button(class="btn-delete") Eliminar
+                a(href="/user/edit/"+user.id class="btn-edit") Editar
 
     script(src="/js/userPug.js")
             

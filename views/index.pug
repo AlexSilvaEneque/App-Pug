@@ -9,15 +9,14 @@ html(lang="en")
         
     body
         h1 Users
-        div#users
-        
-        div 
+        a(href="/register" class="btn-new") Nuevo
+        div.users
             each user in users
                 div.user
                     p.name #{user.nombre}
                     p #{user.edad}
                     p #{user.genero}
                     p #{user.email}
-                    button(type="button" class="btn-delete") Eliminar
-                    a(href="/user/"+user.id class="btn-edit") Editar
+                    //- button(type="button" class="btn-delete") Eliminar
+                    a(href="/user/"+user.id class="btn-more") Ver más
             
