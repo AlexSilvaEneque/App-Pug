@@ -1,22 +1,18 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title #{tittle}
-        link(href="/css/user.css", rel="stylesheet")
-        
-    body
-        h1 Users
-        a(href="/register" class="btn-new") Nuevo
-        div.users
-            each user in users
-                div.user
-                    p.name #{user.nombre}
-                    p #{user.edad}
-                    p #{user.genero}
-                    p #{user.email}
-                    //- button(type="button" class="btn-delete") Eliminar
-                    a(href="/user/"+user.id class="btn-more") Ver más
+extends ./layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet", href="/css/user.css")
+
+block content
+
+    h1 Users
+    a(href="/register" class="btn-new") Nuevo
+    div.users
+        each user in users
+            div.user
+                p.name #{user.nombre}
+                p #{user.edad}
+                p #{user.genero}
+                p #{user.email}                
+                a(href="/user/"+user.id class="btn-more") Ver más
             

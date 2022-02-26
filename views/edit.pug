@@ -1,0 +1,41 @@
+extends ./layouts/main-layout.pug
+
+block styles
+
+block content
+    h1 Edit User
+
+    form#formulario(method="post") 
+        label(for="nombre") Nombre:
+        input(type="text" id="nombre" value=user.nombre name="nombre")
+        br
+
+        label(for="edad") Edad:
+        input(type="text" id="edad" value=user.edad name="edad")
+        br
+
+        label(for="genero") Género:
+        select#genero(name="genero") 
+            option(value="F" selected=(happens == true ? 'selected' : false)) F
+            option(value="M" selected=(happens == false ? 'selected' : false)) M
+        br
+
+        label(for="email") Email:
+        input(type="text" id="email" value=user.email name="email")
+        br
+
+        label(for="profesion") Profesión:
+        input(type="text" id="profesion" value=user.profesion name="profesion")
+        br
+        
+        label(for="salario") Salario:
+        input(type="text" id="salario" value=user.salario name="salario")
+        br
+
+        label(for="nroTelef") Teléfono:
+        input(type="text" id="nroTelef" value=user.nroTelef name="nroTelef")
+
+        br
+        button(id="btn-save") Guardar Cambios
+    script(src="/js/userPug.js")
+    

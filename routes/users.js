@@ -17,15 +17,23 @@ router.get('/', async (req, res) => {
 
 router.get('/user/:id', async (req, res) => {
     const id = req.params.id
-    let user = await userController.readById(id)    
-    return res.render('details',{users: user, tittle: 'Details User'})
+    let userData = await userController.readById(id)
+    let userSend = userData[0]
+    return res.render('details',{user: userSend, tittle: 'Details User'})
 })
 
 
 router.get('/user/edit/:id', async (req, res) => {
+    let has = true
     const id = req.params.id
     let dataUser = await userController.readById(id)
-    return res.render('edit',{user:dataUser, tittle: 'Edit User'})
+    let user = dataUser[0]
+
+    if (user.genero == 'm' || user.genero == 'M') {
+        has = false
+    }
+
+    return res.render('edit',{user:user, tittle: 'Edit User', happens: has})
 })
 
 router.get('/register', (req, res) => {
@@ -40,6 +48,20 @@ router.post('/save', async (req, res) => {
     } else {
         return res.render('register',{tittle: 'Error al registrar', error:true, message: user.error, data: data})
     }
+})
+
+router.post('/update/:id', async (req, res) => {
+    let id = req.params.id
+    let data = req.body
+    let user = await userController.update(id,data)
+    return res.redirect('/')
+})
+
+router.delete('/delete/:id', async (req, res) => {
+    let id = req.params.id
+    let userDelete = await userController.delete(id)
+    let users = await userController.readAll()
+    return res.json(users)
 })
 
 module.exports = router

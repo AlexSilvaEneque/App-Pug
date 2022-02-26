@@ -1,44 +1,43 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title #{tittle}
-    body 
-        form(action="/save" method="post" id="formulario") 
-            //- nombre
-            label(for="nombre") Nombre:
-            input(type="text" id="nombre" name="nombre")
-            br
-            //- edad
-            label(for="edad") Edad:
-            input(type="number" id="edad" name="edad")
-            br
-            //- genero
-            label(for="genero") Género: 
-            select#genero(name="genero")
-                option(value="M") M
-                option(value="F") F
-            br
-            //- email
-            label(for="email") Email:
-            input(type="email" id="email" name="email")
-            br
-            //- profesion
-            label(for="profesion") Profesión:
-            input(type="text" id="profesion" name="profesion")
-            br
-            //- salario
-            label(for="salario") Salario:
-            input(type="text" id="salario" name="salario")
-            br
-            //- nroTelef
-            label(for="nroTelef") Teléfono:
-            input(type="text" id="nroTelef" name="nroTelef")
-            br
+extends ./layouts/main-layout.pug
 
-            button Guardar
+block styles    
+    link(rel="stylesheet", href="")
 
-        if error
-            p #{message}
+block content
+
+    form(action="/save" method="post" id="formulario") 
+        //- nombre
+        label(for="nombre") Nombre:
+        input(type="text" id="nombre" name="nombre")
+        br
+        //- edad
+        label(for="edad") Edad:
+        input(type="number" id="edad" name="edad")
+        br
+        //- genero
+        label(for="genero") Género: 
+        select#genero(name="genero")
+            option(value="M") M
+            option(value="F") F
+        br
+        //- email
+        label(for="email") Email:
+        input(type="email" id="email" name="email")
+        br
+        //- profesion
+        label(for="profesion") Profesión:
+        input(type="text" id="profesion" name="profesion")
+        br
+        //- salario
+        label(for="salario") Salario:
+        input(type="text" id="salario" name="salario")
+        br
+        //- nroTelef
+        label(for="nroTelef") Teléfono:
+        input(type="text" id="nroTelef" name="nroTelef")
+        br
+
+        button Guardar
+
+    if error
+        p #{message}

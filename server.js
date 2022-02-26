@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const { port } = require('./config')
 const userRoutes = require('./routes/users')
 
 const app = express()
@@ -17,6 +18,6 @@ app.use(express.urlencoded({extended:true}))
 
 app.use(userRoutes)
 
-app.listen(3000, () => {
-    console.log('http://localhost:3000')
+app.listen(port, () => {
+    console.log('http://localhost:'+port)
 })
